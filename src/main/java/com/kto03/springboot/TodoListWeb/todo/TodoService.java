@@ -1,10 +1,14 @@
 package com.kto03.springboot.TodoListWeb.todo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class TodoService {
-    private static List<Todo> todos;
+    private static List<Todo> todos = new ArrayList<>();
     // DB 넣기전 임시 데이터
     static {
         todos.add(new Todo(1, "cho", "Spring", LocalDate.now().plusDays(1), false));
