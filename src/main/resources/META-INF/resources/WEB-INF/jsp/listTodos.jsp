@@ -6,30 +6,35 @@
     <meta charset="UTF-8">
     <head>
         <title>Todo List Page</title>
+        <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
     </head>
     <body>
-        <div>${name}님 입니다.</div>
-        <hr>
-        <h1>당신의 Todo List</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>해야할 일</th>
-                    <th>목표 완수 날짜</th>
-                    <th>완료 여부</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${todos}" var="todo">
+        <div class="container">
+            <div>${name}님의 Todo List</div>
+            <hr>
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>${todo.id}</td>
-                        <td>${todo.description}</td>
-                        <td>${todo.targetDate}</td>
-                        <td>${todo.done}</td>
+                        <th>id</th>
+                        <th>해야할 일</th>
+                        <th>목표 완수 날짜</th>
+                        <th>완료 여부</th>
                     </tr>
-                </c:forEach>
-        </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <c:forEach items="${todos}" var="todo">
+                        <tr>
+                            <td>${todo.id}</td>
+                            <td>${todo.description}</td>
+                            <td>${todo.targetDate}</td>
+                            <td>${todo.done}</td>
+                        </tr>
+                    </c:forEach>
+            </tbody>
+            </tabl>
+            <a href="add-todo" class="btn btn-success">TodoList 추가하기</a>
+        </div>
+        <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
