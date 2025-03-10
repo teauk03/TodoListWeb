@@ -18,8 +18,6 @@ public class Todo {
         this.done = done;
     }
 
-
-
     public int getId() {
         return this.id;
     }
@@ -64,7 +62,6 @@ public class Todo {
         this.done = done;
     }
 
-
     @Override
     public String toString() {
         return "{" +
@@ -75,6 +72,4 @@ public class Todo {
             ", done='" + isDone() + "'" +
             "}";
     }
-
-
 }
