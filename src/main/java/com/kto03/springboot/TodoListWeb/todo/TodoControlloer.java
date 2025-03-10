@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @SessionAttributes("name")
@@ -46,6 +49,12 @@ public class TodoControlloer {
         }
         String username = (String) model.get("name");
         todoService.addTodo(username, todo.getDescription(), LocalDate.now().plusYears(1), false);
+        return "redirect:list-todos";
+    }
+    
+    @GetMapping("delete-todo")
+    public String deleteTodo(@RequestParam int id) {
+        todoService.deleteById(id);
         return "redirect:list-todos";
     }
 }
