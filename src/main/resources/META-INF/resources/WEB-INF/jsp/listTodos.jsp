@@ -19,6 +19,7 @@
                         <th>해야할 일</th>
                         <th>목표 완수 날짜</th>
                         <th>완료 여부</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,7 @@
                             <td>${todo.description}</td>
                             <td>${todo.targetDate}</td>
                             <td>${todo.done}</td>
+                            <td><a href="delete-todo?id=${todo.id}" class="btn btn-warning">삭제</a></td>
                         </tr>
                     </c:forEach>
             </tbody>
