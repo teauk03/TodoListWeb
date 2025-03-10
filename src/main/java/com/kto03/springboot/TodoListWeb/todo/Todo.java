@@ -2,9 +2,13 @@ package com.kto03.springboot.TodoListWeb.todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 public class Todo {    
     private int id;
     private String username;
+    
+    @Size(min=10, message="최소 10글자 이상 작성해야 합니다..")
     private String description;
     private LocalDate targetDate;
     private boolean done;
