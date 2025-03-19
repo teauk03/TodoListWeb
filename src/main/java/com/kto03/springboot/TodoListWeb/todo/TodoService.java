@@ -31,7 +31,7 @@ public class TodoService {
 
     public void deleteById(int id) {
          Predicate<? super Todo> isTodo = todo -> todo.getId() == id;
-        this.todos.removeIf(isTodo);
+        TodoService.todos.removeIf(isTodo);
         // todos.removeIf(todo -> todo.getId() == id);
     }
     
