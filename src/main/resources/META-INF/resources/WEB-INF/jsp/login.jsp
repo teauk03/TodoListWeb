@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form method="post">
+    <div class="container">
+        <h1>Login</h1>
         <pre>${errorMessage}</pre>
-        name:<input type="text" name="name">
-        password:<input type="password" name="password">
-        <input type="submit">
-    </form>
+        <form method="post">
+            Name: <input type="text" name="name">
+            Password: <input type="password" name="password">
+            <input type="submit">
+        </form>
+    </div>
 </body>
 </html>
