@@ -1,20 +1,16 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!-- UTF - 8로 인코딩 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<html>
-    <meta charset="UTF-8">
-    <head>
-        <title>Todo 추가 페이지</title>
-        <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    </head>
-    <body>
+
+        <!-- 헤더 프래그 먼트 -->
+        <%@ include file = "common/header.jspf"%>
+        <!-- 네비바 프래그 먼트-->
+        <%@ include file = "common/navigation.jspf"%>
+
         <div class="container">
             <h1>Todo를 추가 해보세요~!</h1>
             <form:form method="post" modelAttribute="todo">
                 <div class="form-group">
-                    
                     <fieldset class=" mb-3">
                         <form:label path="description">할일: </form:label>
                         <form:input type="text" path="description" required="required" class="form-control"></form:input>
@@ -33,9 +29,9 @@
                 <input type="submit" class="btn btn-success"/>
             </form:form>
         </div>
-        <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-        <script src="/webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+        <%@ include file = "common/footer.jspf"%>
+
         <script>
             $(document).ready(function() {
                 $('#targetDate').datepicker({
@@ -45,5 +41,3 @@
                 });
             });
         </script>
-    </body>
-</html>
