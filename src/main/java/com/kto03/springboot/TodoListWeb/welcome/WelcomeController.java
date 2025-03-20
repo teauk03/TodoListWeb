@@ -1,5 +1,7 @@
 package com.kto03.springboot.TodoListWeb.welcome;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +17,13 @@ public class WelcomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String goToWelcomePage(ModelMap model) {   
-        model.put("name", "admin");
+        model.put("name", getLoggedinUserName());
         return "welcome";
+    }
+
+    private String getLoggedinUserName() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
     }
 
 }
