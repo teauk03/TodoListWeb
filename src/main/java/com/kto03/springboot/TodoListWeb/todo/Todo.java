@@ -1,10 +1,16 @@
 package com.kto03.springboot.TodoListWeb.todo;
 
 import java.time.LocalDate;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
-public class Todo {    
+
+@Entity
+public class Todo {  
+    @Id
+    @GeneratedValue  
     private int id;
     private String username;
     
@@ -20,6 +26,9 @@ public class Todo {
         this.description = description;
         this.targetDate = targetDate;
         this.done = done;
+    }
+    public Todo() {
+        
     }
 
     public int getId() {
