@@ -20,12 +20,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @SessionAttributes("name")
 public class TodoControllerJpa {
-    private TodoService todoService;
+
     private TodoRepository todoRepository;
 
-    public TodoControllerJpa(TodoService todoService, TodoRepository todoRepository) {
+    public TodoControllerJpa(TodoRepository todoRepository) {
         super();
-        this.todoService = todoService;
         this.todoRepository = todoRepository;
     }
 
